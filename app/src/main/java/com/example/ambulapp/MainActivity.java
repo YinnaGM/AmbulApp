@@ -1,26 +1,46 @@
 package com.example.ambulapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toast.makeText(this, "OnCreate", Toast.LENGTH_SHORT).show();
+        setContentView(R.layout.bienvenida);
+
+
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
-        Toast.makeText(this, "OnStart", Toast.LENGTH_SHORT).show();
+        setContentView(R.layout.activity_principal_amb);
+
+        final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
+
+        findViewById(R.id.imageMenu).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+
+        });
+
+        NavigationView navigationView = findViewById(R.id.navigationview);
+        navigationView.setItemIconTintList(null);
 
     }
-
+    /*
     @Override
     protected void onResume(){
         super.onResume();
@@ -38,14 +58,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop(){
         super.onStop();
-        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
 
-    }
+    */
 
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        Toast.makeText(this, "0nDestroy", Toast.LENGTH_SHORT).show();
 
-    }
 }
+
