@@ -1,33 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-            <item
-                android:id="@+id/profile"
-                android:title="Perfil"
-                android:icon="@drawable/profile_icon"/>
 
-            <item
-                android:id="@+id/nav_notification"
-                android:title="Notificaciones"
-                android:icon="@drawable/notification_icon"/>
 
-            <item
-                android:id="@+id/nav_history"
-                android:title="Histrorial"
-                android:icon="@drawable/history_icon"/>
+    <item
+        android:id="@+id/nav_Inicio"
+        android:title=" Inicio"
+        android:icon="@drawable/ic_home"/>
 
-            <item
-                android:id="@+id/nav_configuration"
-                android:title="Configuración"
-                android:icon="@drawable/configuration_icon"/>
-            <item
-                android:id="@+id/nav_help"
-                android:title="Ayuda"
-                android:icon="@drawable/help_icon"/>
+    <item
+        android:id="@+id/nav_profile"
+        android:title="Perfil"
+        android:icon="@drawable/profile_icon"/>
 
-            <item
-                android:id="@+id/nav_sign_out"
-                android:title="Cerrar Sesión"
-                android:icon="@drawable/sign_out_icon"/>
+    <item
+        android:id="@+id/nav_notification"
+        android:title="Notificaciones"
+        android:icon="@drawable/notification_icon"/>
+
+    <item
+        android:id="@+id/nav_history"
+        android:title="Historial"
+        android:icon="@drawable/history_icon"/>
+
+    <item
+        android:id="@+id/nav_configuration"
+        android:title="Configuración"
+        android:icon="@drawable/configuration_icon"/>
+    <item
+        android:id="@+id/nav_help"
+        android:title="Ayuda"
+        android:icon="@drawable/help_icon"/>
+
+    <item
+        android:id="@+id/nav_sign_out"
+        android:title="Cerrar Sesión"
+        android:icon="@drawable/sign_out_icon"/>
 
 </menu>

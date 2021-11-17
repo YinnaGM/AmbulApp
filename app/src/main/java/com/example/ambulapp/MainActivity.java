@@ -1,15 +1,27 @@
 package com.example.ambulapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.ambulapp.Ingreso;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class MainActivity extends AppCompatActivity {
+
+
+    Timer timer;
+
 
 
     @Override
@@ -17,50 +29,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bienvenida);
 
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        setContentView(R.layout.activity_principal_amb);
-
-        final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
-
-        findViewById(R.id.imageMenu).setOnClickListener(new View.OnClickListener() {
-
+        timer = new Timer ();
+        timer.schedule(new TimerTask() {
             @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(GravityCompat.START);
+            public void run() {
+                Intent i = new Intent (MainActivity.this, Ingreso.class);
+                startActivity(i);
+                finish();
             }
-
-        });
-
-        NavigationView navigationView = findViewById(R.id.navigationview);
-        navigationView.setItemIconTintList(null);
-
+        }, 3000);
     }
-    /*
-    @Override
-    protected void onResume(){
-        super.onResume();
-        Toast.makeText(this, "OnResume", Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        Toast.makeText(this, "OnPause", Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-
-    */
-
-
 }
-
